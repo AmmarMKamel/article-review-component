@@ -43,10 +43,6 @@ main section p {
   color: hsl(214, 17%, 51%);
 }
 
-main footer div:last-of-type:hover {
-  cursor: pointer;
-}
-
 #user-info {
   display: flex;
   justify-content: space-between;
@@ -89,7 +85,12 @@ main footer div:last-of-type:hover {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: hsl(210, 46%, 95%);
+  background-color: hsl(220, 55%, 96%);
+}
+
+.share-button-hover {
+  cursor: pointer;
+  background-color: hsl(214, 16%, 51%) !important;
 }
 
 #share-info {
@@ -113,6 +114,10 @@ main footer div:last-of-type:hover {
   margin-left: 15px;
 }
 
+#share-info img:hover {
+    cursor: pointer;
+  }
+
 #share-info div:last-of-type {
   width: 30px;
   height: 30px;
@@ -122,6 +127,11 @@ main footer div:last-of-type:hover {
   border-radius: 50%;
   background-color: hsl(214, 17%, 51%);
   margin-left: 48px;
+}
+
+.share-button-active-hover {
+  cursor: pointer;
+  background-color: hsl(220, 55%, 96%) !important;
 }
 
 .show-hide {
