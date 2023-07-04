@@ -1,3 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+body {
+  font-size: 13px;
+  font-family: Manrope, sans-serif;
+  min-height: 100vh;
+  background-color: hsl(212, 23%, 69%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 327px;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+}
+
+main header {
+  background: url("../images/drawers.jpg") no-repeat top/100% 240px;
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+main section {
+  padding: 20px 32px;
+}
+
+main section h2 {
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color: hsl(217, 19%, 35%);
+}
+
+main section p {
+  font-weight: 500;
+  font-size: 1.03em;
+  line-height: 1.5em;
+  color: hsl(214, 17%, 51%);
+}
+
+main footer div:last-of-type:hover {
+  cursor: pointer;
+}
+
+#user-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px;
+}
+
+#user-info img {
+  max-width: 100%;
+}
+
+#user-info div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+#user-info div:first-of-type img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#user-info div:first-of-type p {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  color: hsl(217, 19%, 35%);
+  font-weight: 700;
+}
+
+#user-info div:first-of-type p span {
+  color: hsl(212, 23%, 69%);
+  font-weight: 500;
+}
+
+#user-info div:last-of-type {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: hsl(210, 46%, 95%);
+}
+
+#share-info {
+  background-color: hsl(217, 19%, 35%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px 32px;
+}
+
+#share-info h4 {
+  text-transform: uppercase;
+  margin-right: 15px;
+  letter-spacing: 0.5em;
+  color: hsl(212, 23%, 69%);
+  font-weight: 500;
+}
+
+#share-info div:first-of-type img + img {
+  margin-left: 15px;
+}
+
+#share-info div:last-of-type {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: hsl(214, 17%, 51%);
+  margin-left: 48px;
+}
+
+.show-hide {
+  display: none !important;
+}
+
 body > footer {
   width: 100%;
   font-size: 11px;
