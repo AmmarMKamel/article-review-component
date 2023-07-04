@@ -8,9 +8,6 @@ const shareActiveIcon = document.querySelector(
   "#share-info div:last-of-type img"
 );
 
-const userInfo = document.querySelector("#user-info");
-const shareInfo = document.querySelector("#share-info");
-
 const facebookIcon = document.querySelector("img[alt='Facebook']");
 const twitterIcon = document.querySelector("img[alt='Twitter']");
 const pinterestIcon = document.querySelector("img[alt='Pinterest']");
@@ -25,11 +22,6 @@ divShareIcon.addEventListener("mouseout", function () {
   shareIcon.src = "../images/icon-share.svg";
 });
 
-divShareIcon.addEventListener("click", function () {
-  userInfo.classList.toggle("show-hide");
-  shareInfo.classList.toggle("show-hide");
-});
-
 divShareActiveIcon.addEventListener("mouseover", function () {
   this.classList.toggle("share-button-active-hover");
   shareActiveIcon.src = "../images/icon-share.svg";
@@ -38,11 +30,6 @@ divShareActiveIcon.addEventListener("mouseover", function () {
 divShareActiveIcon.addEventListener("mouseout", function () {
   this.classList.toggle("share-button-active-hover");
   shareActiveIcon.src = "../images/icon-share-active.svg";
-});
-
-divShareActiveIcon.addEventListener("click", function () {
-  userInfo.classList.toggle("show-hide");
-  shareInfo.classList.toggle("show-hide");
 });
 
 // Handle Social Icons Hovering
@@ -69,3 +56,29 @@ pinterestIcon.addEventListener("mouseover", function () {
 pinterestIcon.addEventListener("mouseout", function () {
   this.src = "../images/icon-pinterest.svg";
 });
+
+const handleShareBar = () => {
+  const viewportWidth =
+    window.innerWidth || document.documentElement.clientWidth;
+  if (viewportWidth < 1440) {
+    const userInfo = document.querySelector("#user-info");
+    const shareInfo = document.querySelector("#share-info");
+
+    divShareIcon.addEventListener("click", function () {
+      userInfo.classList.toggle("show-hide");
+      shareInfo.classList.toggle("show-hide");
+    });
+
+    divShareActiveIcon.addEventListener("click", function () {
+      userInfo.classList.toggle("show-hide");
+      shareInfo.classList.toggle("show-hide");
+    });
+  } else {
+    const tooltip = document.getElementById("share-tooltip");
+    divShareIcon.addEventListener("click", function () {
+      tooltip.classList.toggle("tooltip-visible");
+    });
+  }
+};
+
+window.addEventListener("resize", handleShareBar());

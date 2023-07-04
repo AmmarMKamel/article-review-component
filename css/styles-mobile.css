@@ -4,7 +4,7 @@ body {
   font-size: 13px;
   font-family: Manrope, sans-serif;
   min-height: 100vh;
-  background-color: hsl(212, 23%, 69%);
+  background-color: hsl(213, 44%, 95%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -46,26 +46,26 @@ main section p {
 #user-info {
   display: flex;
   justify-content: space-between;
-  padding: 20px 32px;
+  /* padding: 20px 32px; */
 }
 
-#user-info img {
+#user-info > img {
   max-width: 100%;
 }
 
-#user-info div:first-of-type {
+#user-info-div {
   display: flex;
   justify-content: space-between;
 }
 
-#user-info div:first-of-type img {
+#user-info-div img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 20px;
 }
 
-#user-info div:first-of-type p {
+#user-info-div p {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -73,12 +73,13 @@ main section p {
   font-weight: 700;
 }
 
-#user-info div:first-of-type p span {
+#user-info-div p span {
   color: hsl(212, 23%, 69%);
   font-weight: 500;
+  width: 100%;
 }
 
-#user-info div:last-of-type {
+#share-icon {
   width: 30px;
   height: 30px;
   display: flex;
@@ -86,6 +87,7 @@ main section p {
   justify-content: center;
   border-radius: 50%;
   background-color: hsl(220, 55%, 96%);
+  position: relative;
 }
 
 .share-button-hover {
@@ -110,15 +112,15 @@ main section p {
   font-weight: 500;
 }
 
-#share-info div:first-of-type img + img {
+.socials img + img, .tooltip-content img + img {
   margin-left: 15px;
 }
 
-#share-info img:hover {
-    cursor: pointer;
-  }
+.socials img:hover {
+  cursor: pointer;
+}
 
-#share-info div:last-of-type {
+#share-icon-active {
   width: 30px;
   height: 30px;
   display: flex;
@@ -138,6 +140,52 @@ main section p {
   display: none !important;
 }
 
+.tooltip-content {
+  position: absolute;
+  top: -70px;
+  left: -105px;
+  background-color: hsl(219, 19%, 35%);
+  border: 1px solid #ccc;
+  padding: 0 30px 0 20px;
+  z-index: 100;
+  display: none;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.tooltip-content h4 {
+  text-transform: uppercase;
+  margin-right: 15px;
+  letter-spacing: 0.5em;
+  color: hsl(212, 23%, 69%);
+  font-weight: 500;
+}
+
+.tooltip-content img {
+  margin-right: 10px;
+}
+
+.tooltip-content .socials {
+    display: flex;
+}
+
+.tooltip-visible {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.tooltip-visible::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: hsl(219, 19%, 35%) transparent transparent transparent;
+  }
+
 body > footer {
   width: 100%;
   font-size: 11px;
@@ -145,4 +193,30 @@ body > footer {
 }
 body > footer a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    width: 730px;
+    height: 280px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main header {
+    background: url("../images/drawers.jpg") no-repeat left/auto 100%;
+    width: 39%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+  }
+
+  main section {
+    width: 52%;
+  }
+
+  main section h2 {
+    font-size: 1.55em;
+  }
 }
